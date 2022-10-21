@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="container">
+    <div class="my-5">
+      <h1>{{ reviews.title }}</h1>
+      <hr>
+      <p>
+        {{ reviews.content }}</p>
+
+      <div class="d-flex justify-content-end">
+        <a href="{% url 'reviews:update' review.pk %}" class="btn btn-outline-success mx-1 " role="button">수정</a>
+        <a href="{% url 'reviews:delete' review.pk %}" class="btn btn-outline-danger mx-1 " role="button">삭제</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
